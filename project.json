@@ -1,0 +1,21 @@
+{
+  "overview": "A modern single-page marketing website for Lutix DeepTech, a Madurai-based software and AI startup, with a working enquiry form that stores submissions and emails the team.",
+  "features": [
+    "Sticky navigation with smooth-scroll to Home, About, Services, Why Us and Contact",
+    "Hero section with headline, calls to action and a technology visual",
+    "About section with company story, mission and key facts",
+    "Services cards for software development, AI solutions, web and mobile apps, automation and digital transformation",
+    "Why Us value propositions",
+    "Enquiry form that validates input, saves submissions and emails the team",
+    "Responsive layout with mobile menu and hover and focus transitions"
+  ],
+  "category": "landing-page",
+  "tags": [
+    "marketing",
+    "company-website",
+    "software",
+    "ai",
+    "landing-page"
+  ],
+  "last_updated": "2026-10-08T13:13:03.280Z"
+}

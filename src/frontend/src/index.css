@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk";
+    --font-body: "General Sans";
+    --font-mono: "JetBrains Mono";
+    --radius: 0.75rem;
+
+    /* Lutix Signal — deep indigo-ink surfaces, electric cyan signal accent */
+    --background: 0.16 0.022 265;
+    --foreground: 0.95 0.01 260;
+    --card: 0.2 0.026 265;
+    --card-foreground: 0.95 0.01 260;
+    --popover: 0.2 0.026 265;
+    --popover-foreground: 0.95 0.01 260;
+
+    --primary: 0.78 0.14 195;
+    --primary-foreground: 0.16 0.022 265;
+
+    --secondary: 0.25 0.03 265;
+    --secondary-foreground: 0.88 0.01 260;
+    --muted: 0.24 0.028 265;
+    --muted-foreground: 0.68 0.02 260;
+
+    --accent: 0.78 0.15 75;
+    --accent-foreground: 0.16 0.022 75;
+
+    --destructive: 0.62 0.2 25;
+    --destructive-foreground: 0.97 0.01 25;
+
+    --success: 0.7 0.16 150;
+    --warning: 0.78 0.15 80;
+
+    --border: 0.3 0.028 265;
+    --input: 0.3 0.028 265;
+    --ring: 0.78 0.14 195;
+
+    --chart-1: 0.78 0.14 195;
+    --chart-2: 0.78 0.15 75;
+    --chart-3: 0.65 0.16 280;
+    --chart-4: 0.7 0.16 150;
+    --chart-5: 0.62 0.2 25;
+
+    --sidebar: 0.18 0.024 265;
+    --sidebar-foreground: 0.95 0.01 260;
+    --sidebar-primary: 0.78 0.14 195;
+    --sidebar-primary-foreground: 0.16 0.022 265;
+    --sidebar-accent: 0.25 0.03 265;
+    --sidebar-accent-foreground: 0.88 0.01 260;
+    --sidebar-border: 0.3 0.028 265;
+    --sidebar-ring: 0.78 0.14 195;
+
+    /* Extended tokens */
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.78 0.14 195),
+      oklch(0.68 0.16 220)
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(0.2 0.026 265),
+      oklch(0.16 0.022 265)
+    );
+    --gradient-text: linear-gradient(
+      100deg,
+      oklch(0.95 0.01 260) 30%,
+      oklch(0.78 0.14 195)
+    );
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --grid-line: oklch(0.78 0.14 195 / 0.06);
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  ::selection {
+    background: oklch(0.78 0.14 195 / 0.28);
+    color: oklch(0.97 0.01 260);
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .bg-grid {
+    background-image: linear-gradient(
+        to right,
+        var(--grid-line) 1px,
+        transparent 1px
+      ), linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .bg-radial-glow {
+    background: radial-gradient(
+        60% 55% at 78% 8%,
+        oklch(0.78 0.14 195 / 0.16) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        45% 40% at 8% 30%,
+        oklch(0.78 0.15 75 / 0.08) 0%,
+        transparent 65%
+      );
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs font-medium uppercase tracking-[0.22em] text-primary;
+  }
+
+  .surface-card {
+    @apply rounded-2xl border border-border bg-card/70 backdrop-blur-sm;
+  }
+}
